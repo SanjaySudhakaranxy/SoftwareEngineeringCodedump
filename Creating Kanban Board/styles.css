@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.task {
+    background-color: #e7f3fe;
+    border: 1px solid #b3d4fc;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: move;
+}
