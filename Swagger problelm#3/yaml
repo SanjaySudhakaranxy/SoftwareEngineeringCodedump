@@ -1,0 +1,119 @@
+openapi: 3.0.0
+info:
+  title: Book Store API
+  description: A simple API to manage a book store.
+  version: 1.0.0
+paths:
+  /books:
+    get:
+      summary: Retrieve a list of all books
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    title:
+                      type: string
+                      example: "The Great Gatsby"
+                    author:
+                      type: string
+                      example: "F. Scott Fitzgerald"
+                    price:
+                      type: number
+                      format: float
+                      example: 10.99
+    post:
+      summary: Add a new book to the store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: "1984"
+                author:
+                  type: string
+                  example: "George Orwell"
+                price:
+                  type: number
+                  format: float
+                  example: 15.99
+      responses:
+        '201':
+          description: Book created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 2
+                  title:
+                    type: string
+                    example: "1984"
+                  author:
+                    type: string
+                    example: "George Orwell"
+                  price:
+                    type: number
+                    format: float
+                    example: 15.99
+  /books/{id}:
+    get:
+      summary: Retrieve a specific book by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the book to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A book object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  title:
+                    type: string
+                    example: "The Great Gatsby"
+                  author:
+                    type: string
+                    example: "F. Scott Fitzgerald"
+                  price:
+                    type: number
+                    format: float
+                    example: 10.99
+        '404':
+          description: Book not found
+    delete:
+      summary: Delete a specific book by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the book to delete
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Book deleted
+        '404':
+          description: Book not found
