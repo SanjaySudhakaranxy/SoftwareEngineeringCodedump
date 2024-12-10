@@ -1,0 +1,27 @@
+# My Scrum Project in Jira
+
+## Project Overview
+This repository contains the documentation for my Scrum project created in Jira.
+
+## Backlog Items
+The following items were added to the backlog:
+1. Create user registration page
+2. Develop API for login
+3. Implement password reset functionality
+4. Design user profile page
+5. Set up database schema
+
+## Sprint Details
+- **Sprint Duration**: 1 week
+- **Sprint Goal**: 
+
+## Screenshots
+### Start of Sprint
+![Start of Sprint]
+
+### End of Sprint
+![End of Sprint]
+
+## Instructions to View
+1. Clone this repository.
+2. Open the `README.md` file to view the project details.
